@@ -20,7 +20,7 @@ public class RestorantController {
 
 
     //http://localhost:8080/api/resto-app/find-restaurant/name/{name}
-    //http://localhost:8080/api/resto-app/find-restaurant/name/Ramada
+    //http://localhost:8080/api/resto-app/find-restaurant/name/TAJ
     @GetMapping("/find-restaurant/name/{name}")
     public RestaurantModelClass findRestaurantByName(@PathVariable String name){
         return restoService.findByName(name);
@@ -35,17 +35,8 @@ public class RestorantController {
 
 
     //http://localhost:8080/api/resto-app/update-restaurant/number/{number}
-    /*
-    http://localhost:8080/api/resto-app/update-restaurant/number/1001
-    JSON FORMAT-:
-     {
-        "resto_name": "Dream Restaurant",
-        "resto_address": "Bangolore",
-        "resto_number": 1001,
-        "resto_speciality": "5 star",
-        "resto_totalstaff": 200
-    }
-     */
+//    http://localhost:8080/api/resto-app/update-restaurant/number/1001
+
     @PutMapping("/update-restaurant/number/{number}")
     public void updateRestaurant(@PathVariable int number,@RequestBody RestaurantModelClass restaurantModelClass){
         restoService.updateRestaurant(number,restaurantModelClass);
